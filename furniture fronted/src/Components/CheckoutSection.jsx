@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 function CheckoutSection() {
-  let[formData,setformData]= useState({country:"India",firstname:"Ashwani",lastname:"Kumar",companyname:"Anyapvt.ltd",address:"Madhubani",pincode:"847212",state:"Bihar",zip:"125",email:"ashwaniansh@gmail.com",phoneno:"9456102866"})
+  let[formData,setformData]= useState({country:"India",firstname:"Ashwani",lastname:"Kumar",companyName:"AnyaPvt.Ltd",address:"Madhubani",pincode:"847212",state:"Bihar",zip:"125",email:"ashwaniansh@gmail.com",phoneno:"9456102866",Notes:"Hello Everyone."})
   let navigate=useNavigate()
 
   let[cartdata,setcartdata]=useState(JSON.parse(localStorage.getItem('cartData'))||[])
@@ -49,7 +49,7 @@ function CheckoutSection() {
                   <label htmlFor="c_country" className="text-black">
                     Country <span className="text-danger">*</span>
                   </label>
-                  <select name="country" value ={formData["country"]} id="c_country" className="form-control" onChange={(e=>handlechange(e))}>
+                  <select name="country" value ={formData["country"]} id="c_country" className="form-control" onChange={(e)=>handlechange(e)}>
                     <option value={""}>Select a country</option>
                     <option value={"bangladesh"}>bangladesh</option>
                     <option value={"Algeria"}>Algeria</option>
@@ -73,7 +73,7 @@ function CheckoutSection() {
                       className="form-control"
                       id="c_fname"
                       name="firstname"
-                      onChange={(e=>handlechange(e))}
+                      onChange={(e)=>handlechange(e)}
                     />
                   </div>
                   <div className="col-md-6">
@@ -86,22 +86,22 @@ function CheckoutSection() {
                       className="form-control"
                       id="c_lname"
                       name="lastname"
-                      onChange={(e=>handlechange(e))}
+                      onChange={(e)=>handlechange(e)}
                     />
                   </div>
                 </div>
                 <div className="form-group row">
                   <div className="col-md-12">
                     <label htmlFor="c_companyname" className="text-black">
-                      Company Name <span className="text-danger">*</span>
+                      Company Name {" "}
                     </label>
                     <input
-                    value={formData["componyname"]}
+                    value={formData["companyName"]}
                       type="text"
                       className="form-control"
                       id="c_companyname"
-                      name="companyname"
-                      onChange={(e=>handlechange(e))}
+                      name="companyName"
+                      onChange={(e)=>handlechange(e)}
                     />
                   </div>
                 </div>
@@ -116,7 +116,7 @@ function CheckoutSection() {
                       className="form-control"
                       id="c_address"
                       name="address"
-                      onChange={(e=>handlechange(e))}
+                      onChange={(e)=>handlechange(e)}
                       placeholder="Street address"
                     />
                   </div>
@@ -126,7 +126,7 @@ function CheckoutSection() {
                   value={formData["pincode"]}
                     type="text"
                     className="form-control"
-                    onChange={(e=>handlechange(e))}
+                    onChange={(e)=>handlechange(e)}
                     placeholder="Apartment, suite, unit etc. (optional)"
                   />
                 </div>
@@ -141,7 +141,7 @@ function CheckoutSection() {
                       className="form-control"
                       id="c_state_country"
                       name="state"
-                      onChange={(e=>handlechange(e))}
+                      onChange={(e)=>handlechange(e)}
                     />
                   </div>
                   <div className="col-md-6">
@@ -154,7 +154,7 @@ function CheckoutSection() {
                       className="form-control"
                       id="c_postal_zip"
                       name="zip"
-                      onChange={(e=>handlechange(e))}
+                      onChange={(e)=>handlechange(e)}
                     />
                   </div>
                 </div>
@@ -169,7 +169,7 @@ function CheckoutSection() {
                       className="form-control"
                       id="c_email_address"
                       name="email"
-                      onChange={(e=>handlechange(e))}
+                      onChange={(e)=>handlechange(e)}
                     />
                   </div>
                   <div className="col-md-6">
@@ -182,12 +182,12 @@ function CheckoutSection() {
                       className="form-control"
                       id="c_phone"
                       name="phoneno"
-                      onChange={(e=>handlechange(e))}
+                      onChange={(e)=>handlechange(e)}
                       placeholder="Phone Number"
                     />
                   </div>
                 </div>
-                <div className="form-group">
+                {/* <div className="form-group">
                   <label
                     htmlFor="c_create_account"
                     className="text-black"
@@ -389,19 +389,21 @@ function CheckoutSection() {
                       </div>
                     </div>
                   </div>
-                </div>
+                </div> */}
                 <div className="form-group">
                   <label htmlFor="c_order_notes" className="text-black">
                     Order Notes
                   </label>
                   <textarea
-                    name="c_order_notes"
+                  value={formData["Notes"]}
+                    name="Notes"
                     id="c_order_notes"
                     cols={30}
                     rows={5}
                     className="form-control"
                     placeholder="Write your notes here..."
                     defaultValue={""}
+                    onChange={(e)=>handlechange(e)}
                   />
                 </div>
               </div>

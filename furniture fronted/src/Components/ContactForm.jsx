@@ -9,10 +9,10 @@ function ContactForm() {
   // }
   // console.log(formData);
   //////////////////////////////////////////////
-  let [formData1, setFromData1] = useState({ firstName: "hello" })
-  let [formData2, setFromData2] = useState({ lastName: "jangid" })
-  let [formData3, setFromData3] = useState({ email: "jangid@gmail.com" })
-  let [formData4, setFromData4] = useState({ message: "jangid hello" })
+  let [formData1, setFromData1] = useState({ firstName: "Ashwani" })
+  let [formData2, setFromData2] = useState({ lastName: "Kumar" })
+  let [formData3, setFromData3] = useState({ email: "ashwaniansh426@gmail.com" })
+  let [formData4, setFromData4] = useState({ message: "Hello Everyone, Any Query just contact with us." })
   // console.log(formData1["firstName"]);
 
   const handleChange = (e) => {
